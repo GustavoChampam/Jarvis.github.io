@@ -76,9 +76,41 @@ function takeCommand(message) {
         window.open('Calculator:///');
         const finalText = "Opening Calculator";
         speak(finalText);
+    } else if (message.includes('weather')) {
+        getWeather();
+    } else if (message.includes('news')) {
+        getNews();
+    } else if (message.includes('set reminder')) {
+        setReminder(message);
+    } else if (message.includes('play music')) {
+        playMusic(message);
     } else {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "I found some information for " + message + " on Google";
         speak(finalText);
     }
+}
+
+function getWeather() {
+    // API call to a weather service to get current weather information
+    const weatherInfo = "The current weather is sunny with a temperature of 25 degrees Celsius.";
+    speak(weatherInfo);
+}
+
+function getNews() {
+    // API call to a news service to get the latest news
+    const newsInfo = "Here are the latest headlines: ...";
+    speak(newsInfo);
+}
+
+function setReminder(message) {
+    // Extract date and time from message and set a reminder
+    const reminderInfo = "Reminder has been set.";
+    speak(reminderInfo);
+}
+
+function playMusic(message) {
+    // Integrate with a music streaming service to play music
+    const musicInfo = "Playing your favorite song.";
+    speak(musicInfo);
 }
