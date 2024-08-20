@@ -25,7 +25,7 @@ function wishMe() {
 }
 
 window.addEventListener('load', () => {
-    speak("Initializing JARVIS...");
+    speak("Iniciando JARVIS...");
     wishMe();
 });
 
@@ -46,16 +46,16 @@ btn.addEventListener('click', () => {
 
 function takeCommand(message) {
     if (message.includes('hey') || message.includes('hello')) {
-        speak("Hello Sir, How May I Help You?");
-    } else if (message.includes("open google")) {
+        speak("Olá Senhor, Como posso te ajudar ?");
+    } else if (message.includes("Abra o google")) {
         window.open("https://google.com", "_blank");
-        speak("Opening Google...");
-    } else if (message.includes("open youtube")) {
+        speak("Abrindo Google...");
+    } else if (message.includes("Abra youtube")) {
         window.open("https://youtube.com", "_blank");
-        speak("Opening Youtube...");
-    } else if (message.includes("open facebook")) {
+        speak("Abrindo Youtube...");
+    } else if (message.includes("Abra facebook")) {
         window.open("https://facebook.com", "_blank");
-        speak("Opening Facebook...");
+        speak("Abrindo Facebook...");
     } else if (message.includes('what is') || message.includes('who is') || message.includes('what are')) {
         window.open(`https://www.google.com/search?q=${message.replace(" ", "+")}`, "_blank");
         const finalText = "This is what I found on the internet regarding " + message;
@@ -111,6 +111,6 @@ function setReminder(message) {
 
 function playMusic(message) {
     // Integrate with a music streaming service to play music
-    const musicInfo = "Playing your favorite song.";
+    const musicInfo = "Tocando sua música favorita.";
     speak(musicInfo);
 }
